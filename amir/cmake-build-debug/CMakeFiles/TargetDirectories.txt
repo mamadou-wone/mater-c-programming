@@ -1,0 +1,3 @@
+/home/mamadou/Bureau/Master/mater-c-programming/amir/cmake-build-debug/CMakeFiles/amir.dir
+/home/mamadou/Bureau/Master/mater-c-programming/amir/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mamadou/Bureau/Master/mater-c-programming/amir/cmake-build-debug/CMakeFiles/rebuild_cache.dir
