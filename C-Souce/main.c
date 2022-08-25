@@ -5,13 +5,8 @@
 
 int main(int argc, char const *argv[])
 {
-    char name[60];
-    printf("%s \n", name);
-    for (int i = 0; i < 7; i++)
-    {
-        strcat(name, "*");
-        printf("%s \n", name);
-    }
-    
+    float decimal;
+    scanf("%f", &decimal);
+    printf("%f \n", (decimal - (int)decimal));
     return 0;
 }
