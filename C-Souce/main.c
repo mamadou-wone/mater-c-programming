@@ -1,3 +1,10 @@
+/**
+ * @file main.c
+ * @author amir-boss (mamadouwone.com)
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <stdio.h>
 #include <stdio.h>
 #include <unistd.h>
