@@ -29,9 +29,6 @@ void getDigits(int number)
 
 int main(int argc, char const *argv[])
 {
-    
-    // getDigits(54896347);
-    // printf("%d \n", (int)sqrt(9));
     printf("[%d] \n", (int)pow(3, 2));
     return 0;
 }
