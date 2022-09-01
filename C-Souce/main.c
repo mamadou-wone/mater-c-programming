@@ -27,6 +27,6 @@ void getDigits(int number)
 
 int main(int argc, char const *argv[])
 {
-    printf("[%d] \n", (int)pow(3, 2));
+    // printf("[%d] \n", (int)pow(3, 2));
     return 0;
 }
