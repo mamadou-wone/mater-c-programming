@@ -30,3 +30,5 @@ int main(int argc, char const *argv[])
     // printf("[%d] \n", (int)pow(3, 2));
     return 0;
 }
+
+// Start looking for computer architecture 
