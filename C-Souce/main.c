@@ -33,9 +33,18 @@ void getDigits(int number)
     // return tab;
 }
 
+void toBits(int number){
+    while(number != 0){
+        printf("bit : [%d] \n", number % 2);
+        number = (int) number / 2;
+    }
+    printf("You must read from down to Up :)\n");
+}
+
 int main(int argc, char const *argv[])
 {
     // printf("[%d] \n", (int)pow(3, 2));
+    toBits(13);
     return 0;
 }
 
