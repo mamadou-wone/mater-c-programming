@@ -44,7 +44,9 @@ void toBits(int number){
 int main(int argc, char const *argv[])
 {
     // printf("[%d] \n", (int)pow(3, 2));
-    toBits(13);
+    // toBits(13);
+    printf("Days = 0X%X \n Month=  0X%X \n Year= 0X%X \n", 20, 8, 2012);
+    // printf("%X \n", 'A');
     return 0;
 }
 
