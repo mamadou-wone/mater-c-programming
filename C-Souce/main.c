@@ -45,23 +45,23 @@ void toBits(int number)
 
 int main(int argc, char const *argv[])
 {
-    // for (int i = 0; i < 10; i++)
+    for (int i = 1; i < 10; i++)
+    {
+        for (int j = 1; j < i; j++)
+        {
+            printf("%d", j);
+        }
+        printf("\n");
+    }
+
+    // for (int i = 10; i > 0; i--)
     // {
-    //     for (int j = i + 1; j > 0; j--)
+    //     for (int j = 0; j < i; j++)
     //     {
     //         printf("*");
     //     }
     //     printf("\n");
     // }
-
-    for (int i = 10; i > 0; i--)
-    {
-        for (int j = 0; j < i; j++)
-        {
-            printf("*");
-        }
-        printf("\n");
-    }
 
     // p
     // printf("[%d] \n", (int)pow(3, 2));
