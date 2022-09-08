@@ -16,6 +16,32 @@
 #include <string.h>
 #include <math.h>
 
+void trianglePattern()
+{
+    int n = 3;
+    // int i = 1;
+    int j = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        printf("i = %d |", i);
+        for (int k = n; k > 0; k--)
+        {
+            if (i >= k)
+            {
+                j++;
+                printf("%d", j);
+            }
+            else
+            {
+                printf(" ");
+            }
+            // j++;
+            // printf(" || k = %d ", k);
+        }
+        printf("\n");
+    }
+}
+
 void getDigits(int number)
 {
     // int tab[8];
@@ -44,27 +70,6 @@ void toBits(int number)
 
 int main(int argc, char const *argv[])
 {
-    int n = 3;
-    // int i = 1;
-    int j = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        printf("i = %d |", i);
-        for (int k = n; k > 0; k--)
-        {
-            if (i >= k)
-            {
-                j++;
-                printf("%d", j);
-            }else{
-                printf(" ");
-            }
-            // j++;
-            // printf(" || k = %d ", k);
-        }
-        printf("\n");
-    }
-
     // for (int i = 1; i < 10; i++)
     // {
     //     for (int j = 1; j < i; j++)
