@@ -68,6 +68,29 @@ void toBits(int number)
     printf("You must read from down to Up :)\n");
 }
 
+char toLower(char c){
+    // printf("%d\n", c);
+    char result = c;
+    if('a' <= c && c <= 'z'){
+        // printf("lower\n");
+        // printf("%c\n", c - 32);
+        result = c - 32;
+    }else if ('A' <= c && c <= 'Z')
+    {
+        // printf("Upper\n");
+        // printf("%c\n", c + 32);
+        result = c + 32;
+    }
+    return result;
+}
+
+
+int charToDigit(char c1, char c2, char c3){
+    if (c1 >= '0' && c1 <= '9' && c2 >= '0' && c2 <= '9' && c3 >= '0' && c3 <= '9')
+        return (((int) c1 % 16) * 100) + (((int) c2 % 16) * 10) + (int) c3 % 16;
+    return 0;
+}
+
 int main(int argc, char const *argv[])
 {
     // for (int i = 1; i < 10; i++)
@@ -93,6 +116,19 @@ int main(int argc, char const *argv[])
     // toBits(13);
     // printf("Days = 0X%X \n Month=  0X%X \n Year= 0X%X \n", 20, 8, 2012);
     // printf("%X \n", 'A');
+    // int n = 35;
+    // int firstDigit, secondDigit;
+    // firstDigit = n % 10;
+    // secondDigit = (int) n / 10;
+    // printf("firstDigit --> %d\n", firstDigit);
+    // printf("secondDigit --> %d\n", secondDigit);
+    // int max;
+    // max = firstDigit > secondDigit ? firstDigit : secondDigit;
+    // printf("MAX --> %d\n", max);
+    // toLower('z');
+    // printf("%c\n", toLower('a'));
+
+    printf("%d \n", charToDigit('8', '9', '9'));
     return 0;
 }
 
