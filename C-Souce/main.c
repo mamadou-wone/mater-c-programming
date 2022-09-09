@@ -72,22 +72,17 @@ char toLower(char c){
     // printf("%d\n", c);
     char result = c;
     if('a' <= c && c <= 'z'){
-        // printf("lower\n");
-        // printf("%c\n", c - 32);
-        result = c - 32;
-    }else if ('A' <= c && c <= 'Z')
-    {
-        // printf("Upper\n");
-        // printf("%c\n", c + 32);
-        result = c + 32;
+        return c - 'A' + 'a';
     }
-    return result;
+    return  c - 'a' + 'A';
 }
+
 
 
 int charToDigit(char c1, char c2, char c3){
     if (c1 >= '0' && c1 <= '9' && c2 >= '0' && c2 <= '9' && c3 >= '0' && c3 <= '9')
-        return (((int) c1 % 16) * 100) + (((int) c2 % 16) * 10) + (int) c3 % 16;
+        // return (((int) c1 % 16) * 100) + (((int) c2 % 16) * 10) + (int) c3 % 16;
+        return ((c1 - '0' ) * 100 + (c2 - '0') * 10 + (c3 - '0'));
     return 0;
 }
 
@@ -129,6 +124,8 @@ int main(int argc, char const *argv[])
     // printf("%c\n", toLower('a'));
 
     printf("%d \n", charToDigit('8', '9', '9'));
+    // int num = '4' - '0';
+    // printf("%d\n", num);
     return 0;
 }
 
