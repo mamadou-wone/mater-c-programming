@@ -86,6 +86,29 @@ int charToDigit(char c1, char c2, char c3){
     return 0;
 }
 
+int amountAndAverageOfDigit(int num, int digit){
+    int average = 0;
+    int count = 0;
+    int temp;
+    if(digit > 9 || digit <= 0 || num < 0){
+        return 0;
+    }
+
+    while (num != 0)
+    {
+        temp = num % 10;
+        num = (int) num / 10;
+        if (temp < digit)
+        {
+            count++;
+            average += temp;
+        }
+    }
+    return (int) average / count;
+    
+}
+
+
 int main(int argc, char const *argv[])
 {
     // for (int i = 1; i < 10; i++)
@@ -123,9 +146,13 @@ int main(int argc, char const *argv[])
     // toLower('z');
     // printf("%c\n", toLower('a'));
 
-    printf("%d \n", charToDigit('8', '9', '9'));
+    // printf("%d \n", charToDigit('8', '9', '9'));
     // int num = '4' - '0';
     // printf("%d\n", num);
+    
+    
+    printf("%d \n", amountAndAverageOfDigit(45213, 0));
+    
     return 0;
 }
 
