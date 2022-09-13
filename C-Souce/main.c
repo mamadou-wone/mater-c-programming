@@ -68,44 +68,55 @@ void toBits(int number)
     printf("You must read from down to Up :)\n");
 }
 
-char toLower(char c){
+char toLower(char c)
+{
     // printf("%d\n", c);
     char result = c;
-    if('a' <= c && c <= 'z'){
+    if ('a' <= c && c <= 'z')
+    {
         return c - 'A' + 'a';
     }
-    return  c - 'a' + 'A';
+    return c - 'a' + 'A';
 }
 
-int charToDigit(char c1, char c2, char c3){
+int charToDigit(char c1, char c2, char c3)
+{
     if (c1 >= '0' && c1 <= '9' && c2 >= '0' && c2 <= '9' && c3 >= '0' && c3 <= '9')
         // return (((int) c1 % 16) * 100) + (((int) c2 % 16) * 10) + (int) c3 % 16;
-        return ((c1 - '0' ) * 100 + (c2 - '0') * 10 + (c3 - '0'));
+        return ((c1 - '0') * 100 + (c2 - '0') * 10 + (c3 - '0'));
     return 0;
 }
 
-int amountAndAverageOfDigit(int num, int digit){
+int amountAndAverageOfDigit(int num, int digit)
+{
     int average = 0;
     int count = 0;
     int temp;
-    if(digit > 9 || digit <= 0 || num < 0){
+    if (digit > 9 || digit <= 0 || num < 0)
+    {
         return 0;
     }
 
     while (num != 0)
     {
         temp = num % 10;
-        num /= (int) 10;
+        num /= (int)10;
         if (temp < digit)
         {
             count++;
             average += temp;
         }
     }
-    return (int) average / count;
-    
+    return (int)average / count;
 }
 
+void swap(int a, int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+    printf("Inside swap function:Value of a = %d and the value of b = %d \n", a, b);
+}
 
 int main(int argc, char const *argv[])
 {
@@ -147,12 +158,28 @@ int main(int argc, char const *argv[])
     // printf("%d \n", charToDigit('8', '9', '9'));
     // int num = '4' - '0';
     // printf("%d\n", num);
-    
-    
+
     // printf("%d \n", amountAndAverageOfDigit(45213, 5));
 
-    
+    // int tab[] = {1, 2, 3};
+    // printf("Address %lu\n", &tab[0]);    
+    // printf("Address %lu\n", &tab[1]);
+    // printf("Address %lu\n", &tab[2]);
 
+
+    int a = 5;
+    int *p;
+    p = &a;
+
+    printf("%d\n ", a);
+    printf("%p\n ", &a);
+    printf("%p\n ", p);
+    printf("%d\n ", *p);
+
+    // int a = 12; 
+    // int b = 15;
+    // swap(a, b);
+    // printf("Value of a = %d and the value of b = %d \n", a, b);
 
     return 0;
 }
