@@ -110,12 +110,37 @@ int amountAndAverageOfDigit(int num, int digit)
     return (int)average / count;
 }
 
-void swap(int a, int b)
+void swap(int *a, int *b)
 {
-    int temp = a;
-    a = b;
-    b = temp;
-    printf("Inside swap function:Value of a = %d and the value of b = %d \n", a, b);
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    // int *aPr;
+    // aPr = &a;
+    // printf("%lu\n ", a);
+    printf("Inside swap function:Value of a = %d and the value of b = %d \n", *a, *b);
+}
+
+int findMax(int num1, int num2)
+{
+    if (num1 > num2)
+        return num1;
+    else
+        return num2;
+}
+
+void findMinMax(int num1, int num2, int *pMax, int *pMin)
+{
+    if (num1 > num2)
+    {
+        *pMax = num1;
+        *pMin = num2;
+    }
+    else
+    {
+        *pMax = num2;
+        *pMin = num1;
+    }
 }
 
 int main(int argc, char const *argv[])
@@ -162,24 +187,38 @@ int main(int argc, char const *argv[])
     // printf("%d \n", amountAndAverageOfDigit(45213, 5));
 
     // int tab[] = {1, 2, 3};
-    // printf("Address %lu\n", &tab[0]);    
+    // printf("Address %lu\n", &tab[0]);
     // printf("Address %lu\n", &tab[1]);
     // printf("Address %lu\n", &tab[2]);
 
+    // int a = 5;
+    // int *p;
+    // p = &a;
 
-    int a = 5;
-    int *p;
-    p = &a;
+    // printf("%d\n ", a);
+    // printf("%p\n ", &a);
+    // printf("%p\n ", p);
+    // printf("%d\n ", *p);
 
-    printf("%d\n ", a);
-    printf("%p\n ", &a);
-    printf("%p\n ", p);
-    printf("%d\n ", *p);
-
-    // int a = 12; 
+    // int a = 12;
+    // printf("Address %p \n", &a);
     // int b = 15;
-    // swap(a, b);
+    // swap(&a, b);
     // printf("Value of a = %d and the value of b = %d \n", a, b);
+
+    // int grade1 = 17, grade2 = 36;
+    // int *pgrade1 = &grade1, *pgrade2 = &grade2;
+    // printf("Grade1 value = %d and address: %p \n", grade1, pgrade1);
+    // printf("Grade value = %d and address: %p \n", grade2, &pgrade2);
+
+    int a = 5, b = 7;
+    // int max, min;
+    // findMinMax(a, b, &max, &min);
+    // printf("Max = %d \n", max);
+    // printf("Min = %d \n", min);
+    printf("Value of a = %d and the value of b = %d \n", a, b);
+    swap(&a, &b);
+    printf("Value of a = %d and the value of b = %d \n", a, b);
 
     return 0;
 }
