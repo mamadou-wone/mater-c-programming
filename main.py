@@ -39,7 +39,7 @@ def get_sum(tab):
         elif  elem > MAX and elem % 2 != 0:
             count += (elem - elem %2) / 2
         else:
-            count += elem / MAX
+            count += elem / 3
             
     return count
 

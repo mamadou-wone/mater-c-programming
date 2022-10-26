@@ -21,17 +21,19 @@ public class Amazon{
                 weightList.add(elem);
             }
         }
+
         List<Integer> occ = new ArrayList<>();
+
         for (Integer integer : weightList) {
             int count = 0;
             for (Integer integer2 : array) {
-                if(integer == integer2){
+                if (integer == integer2) {
                     count++;
                 }
-            occ.add(count);    
-            count = 0;
             }
+            occ.add(count);
         }
+    
         System.out.println(occ.size());
         return occ;
     }
