@@ -143,8 +143,43 @@ void findMinMax(int num1, int num2, int *pMax, int *pMin)
     }
 }
 
+
+int isPalidrome(int arr[]){
+
+    int isPalindrome = 0;
+    int i, k = 0;
+    int j = sizeof(arr) / sizeof(arr[0]);
+    printf("J %d \n", j);
+    for(i = 0; i < j; i++){
+        k = j - i - 1;
+        if (arr[i] == arr[k])
+            isPalindrome = 1;
+        else
+            isPalindrome = 0;   
+    }
+
+    return isPalindrome;
+}
+
 int main(int argc, char const *argv[])
 {
+    int arr[] = {5,1, 3, 2, 3, 1, 5};
+
+    int isPalindrom = 0;
+    int i, k = 0;
+    int j = sizeof(arr) / sizeof(arr[0]);
+
+    for(i = 0; i < j; i++){
+        k = j - i - 1;
+        if (arr[i] == arr[k])
+            isPalindrom = 1;
+        else
+            isPalindrom = 0;   
+    }
+
+    printf("Is Palindrome %d \n", isPalindrom);
+
+
     // for (int i = 1; i < 10; i++)
     // {
     //     for (int j = 1; j < i; j++)
@@ -211,14 +246,14 @@ int main(int argc, char const *argv[])
     // printf("Grade1 value = %d and address: %p \n", grade1, pgrade1);
     // printf("Grade value = %d and address: %p \n", grade2, &pgrade2);
 
-    int a = 5, b = 7;
+    // int a = 5, b = 7;
     // int max, min;
     // findMinMax(a, b, &max, &min);
     // printf("Max = %d \n", max);
     // printf("Min = %d \n", min);
-    printf("Value of a = %d and the value of b = %d \n", a, b);
-    swap(&a, &b);
-    printf("Value of a = %d and the value of b = %d \n", a, b);
+    // printf("Value of a = %d and the value of b = %d \n", a, b);
+    // swap(&a, &b);
+    // printf("Value of a = %d and the value of b = %d \n", a, b);
 
     return 0;
 }
