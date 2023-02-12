@@ -161,23 +161,41 @@ int isPalidrome(int arr[]){
     return isPalindrome;
 }
 
+int largestNeighBorSum(int size, int arr[]){
+    int max = 0;
+
+    for (int i = 0; i <= size - 2; i++)
+    {
+        if ((arr[i] + arr[i + 1]) > max)
+        {
+            max = arr[i] + arr[i + 1];
+        }
+        
+    }
+    return max;
+}
+
 int main(int argc, char const *argv[])
 {
-    int arr[] = {5,1, 3, 2, 3, 1, 5};
+    // int arr[] = {5,1, 3, 2, 3, 1, 5};
+    // int arr[] = {1, 4, 3, 7, 1};
+    int arr[] = {5, 7, 134, 5, 21};
 
-    int isPalindrom = 0;
-    int i, k = 0;
-    int j = sizeof(arr) / sizeof(arr[0]);
+    printf("Largest Neighbors Sum : [%d] ", largestNeighBorSum(5, arr));
 
-    for(i = 0; i < j; i++){
-        k = j - i - 1;
-        if (arr[i] == arr[k])
-            isPalindrom = 1;
-        else
-            isPalindrom = 0;   
-    }
+    // int isPalindrom = 0;
+    // int i, k = 0;
+    // int j = sizeof(arr) / sizeof(arr[0]);
 
-    printf("Is Palindrome %d \n", isPalindrom);
+    // for(i = 0; i < j; i++){
+    //     k = j - i - 1;
+    //     if (arr[i] == arr[k])
+    //         isPalindrom = 1;
+    //     else
+    //         isPalindrom = 0;   
+    // }
+
+    // printf("Is Palindrome %d \n", isPalindrom);
 
 
     // for (int i = 1; i < 10; i++)
