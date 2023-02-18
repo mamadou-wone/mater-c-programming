@@ -179,9 +179,39 @@ int main(int argc, char const *argv[])
 {
     // int arr[] = {5,1, 3, 2, 3, 1, 5};
     // int arr[] = {1, 4, 3, 7, 1};
-    int arr[] = {5, 7, 134, 5, 21};
+    // int arr[] = {5, 7, 134, 5, 21};
+    int arr[] = {1, 2, 7, 5, 10};
 
-    printf("Largest Neighbors Sum : [%d] ", largestNeighBorSum(5, arr));
+    char rSorted; char sorted;
+
+    for (int i = 0; i < 4; i++)
+    {
+        if(arr[i] < arr[i + 1]){
+            rSorted = '1';
+        }
+        else{
+            rSorted = '0';
+            break;
+        }
+
+        // if(arr[i] <= arr[i + 1]){
+        //         sorted = 1;
+        // }else{
+        //     sorted = 0;
+        // }
+        printf("[%c]\n", rSorted);
+    }
+    printf("[%c]\n", rSorted);
+    if (rSorted == '1')
+    {
+        printf("Really sorted \n");
+    }else{
+        printf("Unsorted\n");
+    }
+    
+    
+
+    // printf("Largest Neighbors Sum : [%d] ", largestNeighBorSum(5, arr));
 
     // int isPalindrom = 0;
     // int i, k = 0;
