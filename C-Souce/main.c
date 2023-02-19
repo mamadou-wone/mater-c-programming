@@ -143,25 +143,27 @@ void findMinMax(int num1, int num2, int *pMax, int *pMin)
     }
 }
 
-
-int isPalidrome(int arr[]){
+int isPalidrome(int arr[])
+{
 
     int isPalindrome = 0;
     int i, k = 0;
     int j = sizeof(arr) / sizeof(arr[0]);
     printf("J %d \n", j);
-    for(i = 0; i < j; i++){
+    for (i = 0; i < j; i++)
+    {
         k = j - i - 1;
         if (arr[i] == arr[k])
             isPalindrome = 1;
         else
-            isPalindrome = 0;   
+            isPalindrome = 0;
     }
 
     return isPalindrome;
 }
 
-int largestNeighBorSum(int size, int arr[]){
+int largestNeighBorSum(int size, int arr[])
+{
     int max = 0;
 
     for (int i = 0; i < size - 1; i++)
@@ -170,9 +172,45 @@ int largestNeighBorSum(int size, int arr[]){
         {
             max = arr[i] + arr[i + 1];
         }
-        
     }
     return max;
+}
+
+void isArrayIsSorted(int size, int arr[])
+{
+    int rSorted, sorted;
+
+    for (int i = 0; i < size - 1; i++)
+    {
+        if (arr[i] < arr[i + 1])
+        {
+            rSorted = 1;
+        }
+        else if (arr[i] <= arr[i + 1])
+        {
+            rSorted = 0;
+            sorted = 1;
+        }
+        else
+        {
+            rSorted = 0;
+            sorted = 0;
+            break;
+        }
+    }
+
+    if (rSorted == 1 && sorted != 1)
+    {
+        printf("Really sorted \n");
+    } 
+    else if (rSorted != 1 && sorted == 1 || rSorted == 1 && sorted == 1)
+    {
+        printf("Sorted \n");
+    }
+    else
+    {
+        printf("Unsorted\n");
+    }
 }
 
 int main(int argc, char const *argv[])
@@ -180,36 +218,43 @@ int main(int argc, char const *argv[])
     // int arr[] = {5,1, 3, 2, 3, 1, 5};
     // int arr[] = {1, 4, 3, 7, 1};
     // int arr[] = {5, 7, 134, 5, 21};
-    int arr[] = {1, 2, 7, 5, 10};
+    int arr[] = {1, 2, 5, 7, 10};
 
-    char rSorted; char sorted;
+    isArrayIsSorted(5, arr);
 
-    for (int i = 0; i < 4; i++)
-    {
-        if(arr[i] < arr[i + 1]){
-            rSorted = '1';
-        }
-        else{
-            rSorted = '0';
-            break;
-        }
+    // printf("Is Sorted %d \n", isArrayIsSorted(5, arr));
 
-        // if(arr[i] <= arr[i + 1]){
-        //         sorted = 1;
-        // }else{
-        //     sorted = 0;
-        // }
-        printf("[%c]\n", rSorted);
-    }
-    printf("[%c]\n", rSorted);
-    if (rSorted == '1')
-    {
-        printf("Really sorted \n");
-    }else{
-        printf("Unsorted\n");
-    }
-    
-    
+    // int rSorted , sorted;
+
+    // int *ptr = &rSorted;
+    // int i = 0;
+    // for (i = 0; i < 4; i++)
+    // {
+    //     if(arr[i] < arr[i + 1]){
+    //         // rSorted = 1;
+    //         *ptr = 1;
+    //     }
+    //     else{
+    //         // rSorted = 0;
+    //         *ptr = 0;
+    //         break;
+    //     }
+
+    //     // if(arr[i] <= arr[i + 1]){
+    //     //         sorted = 1;
+    //     // }else{
+    //     //     sorted = 0;
+    //     // }
+    //     printf("[%d]\n", *ptr);
+    // }
+    // printf("[%d]\n", *ptr);
+
+    // if (rSorted == 1)
+    // {
+    //     printf("Really sorted \n");
+    // }else{
+    //     printf("Unsorted\n");
+    // }
 
     // printf("Largest Neighbors Sum : [%d] ", largestNeighBorSum(5, arr));
 
@@ -222,11 +267,10 @@ int main(int argc, char const *argv[])
     //     if (arr[i] == arr[k])
     //         isPalindrom = 1;
     //     else
-    //         isPalindrom = 0;   
+    //         isPalindrom = 0;
     // }
 
     // printf("Is Palindrome %d \n", isPalindrom);
-
 
     // for (int i = 1; i < 10; i++)
     // {
