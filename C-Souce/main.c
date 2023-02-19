@@ -202,7 +202,7 @@ void isArrayIsSorted(int size, int arr[])
     if (rSorted == 1 && sorted != 1)
     {
         printf("Really sorted \n");
-    } 
+    }
     else if (rSorted != 1 && sorted == 1 || rSorted == 1 && sorted == 1)
     {
         printf("Sorted \n");
@@ -213,14 +213,46 @@ void isArrayIsSorted(int size, int arr[])
     }
 }
 
+void printAllUniqueNumber(int size, int arr[])
+{
+    int i = 0;
+
+    while (i != size)
+    {
+        int flag = arr[i]; int unique = 0;
+        for (int j = 0; j < size; j++)
+        {
+            if (i != j)
+            {
+                if (flag == arr[j])
+                {
+                    unique = 0;
+                    break;
+                }
+                else
+                {
+                    unique = 1;
+                }
+            }
+        }
+        if (unique == 1)
+        {
+            printf("[%d]\n", arr[i]);
+        }
+        i++;
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     // int arr[] = {5,1, 3, 2, 3, 1, 5};
     // int arr[] = {1, 4, 3, 7, 1};
     // int arr[] = {5, 7, 134, 5, 21};
-    int arr[] = {1, 2, 5, 7, 10};
+    int arr[] = {10, 2, 5, 2, 7, 10};
 
-    isArrayIsSorted(5, arr);
+    printAllUniqueNumber(6, arr);
+
+    // isArrayIsSorted(5, arr);
 
     // printf("Is Sorted %d \n", isArrayIsSorted(5, arr));
 
