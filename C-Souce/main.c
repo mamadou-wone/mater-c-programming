@@ -215,11 +215,11 @@ void isArrayIsSorted(int size, int arr[])
 
 void printAllUniqueNumber(int size, int arr[])
 {
-    int i = 0;
+    int i = 0; int count = 0;
 
     while (i != size)
     {
-        int flag = arr[i]; int unique = 0;
+        int flag = arr[i]; int unique = 0; 
         for (int j = 0; j < size; j++)
         {
             if (i != j)
@@ -238,9 +238,11 @@ void printAllUniqueNumber(int size, int arr[])
         if (unique == 1)
         {
             printf("[%d]\n", arr[i]);
+            count++;
         }
         i++;
     }
+    printf("Number of unique number %d\n ", count);
 }
 
 int main(int argc, char const *argv[])
