@@ -215,11 +215,13 @@ void isArrayIsSorted(int size, int arr[])
 
 void printAllUniqueNumber(int size, int arr[])
 {
-    int i = 0; int count = 0;
+    int i = 0;
+    int count = 0;
 
     while (i != size)
     {
-        int flag = arr[i]; int unique = 0; 
+        int flag = arr[i];
+        int unique = 0;
         for (int j = 0; j < size; j++)
         {
             if (i != j)
@@ -245,14 +247,48 @@ void printAllUniqueNumber(int size, int arr[])
     printf("Number of unique number %d\n ", count);
 }
 
+void rotateArray(int arr[], int size, int shift)
+{
+    int position, temp, flag;
+
+    for (int j = 0; j < shift; j++)
+    {
+        flag = arr[0];
+        for (int i = 0; i < size; i++)
+        {
+            position = (i + 1) % size;
+
+            if (position == 0)
+            {
+                arr[i] = flag;
+            }
+            else
+            {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("[%d]   ", arr[i]);
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     // int arr[] = {5,1, 3, 2, 3, 1, 5};
     // int arr[] = {1, 4, 3, 7, 1};
     // int arr[] = {5, 7, 134, 5, 21};
-    int arr[] = {10, 2, 5, 2, 7, 10};
+    // int arr[] = {10, 2, 5, 2, 7, 10};
 
-    printAllUniqueNumber(6, arr);
+    // printAllUniqueNumber(6, arr);
+
+    int arr[] = {7, 4, 1, 3};
+
+    rotateArray(arr, 4, 2);
 
     // isArrayIsSorted(5, arr);
 
