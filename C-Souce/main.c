@@ -277,6 +277,22 @@ void rotateArray(int arr[], int size, int shift)
     }
 }
 
+void rotateLeft2(int arr[], int size)
+{
+    int temp = arr[0];
+
+    for (int i = 0; i < size - 1; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    arr[size - 1] = temp;
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("[%d]   ", arr[i]);
+    }
+}
+
 int main(int argc, char const *argv[])
 {
     // int arr[] = {5,1, 3, 2, 3, 1, 5};
@@ -288,7 +304,9 @@ int main(int argc, char const *argv[])
 
     int arr[] = {7, 4, 1, 3};
 
-    rotateArray(arr, 4, 2);
+    rotateLeft2(arr, 4);
+
+    // rotateArray(arr, 4, 2);
 
     // isArrayIsSorted(5, arr);
 
