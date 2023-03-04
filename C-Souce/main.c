@@ -247,36 +247,6 @@ void printAllUniqueNumber(int size, int arr[])
     printf("Number of unique number %d\n ", count);
 }
 
-void rotateArray(int arr[], int size, int shift)
-{
-    int position, temp, flag;
-
-    for (int j = 0; j < shift; j++)
-    {
-        flag = arr[0];
-        for (int i = 0; i < size; i++)
-        {
-            position = (i + 1) % size;
-
-            if (position == 0)
-            {
-                arr[i] = flag;
-            }
-            else
-            {
-                temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-            }
-        }
-    }
-
-    for (int i = 0; i < size; i++)
-    {
-        printf("[%d]   ", arr[i]);
-    }
-}
-
 void rotateLeft2(int arr[], int size)
 {
     int temp = arr[0];
